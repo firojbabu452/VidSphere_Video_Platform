@@ -1,0 +1,76 @@
+/* SubscribedChannel.css */
+.subc-container {
+  flex-grow: 1;
+  padding: 12px 16px;
+  background-color: #111;
+  overflow-y: auto;
+  height: calc(100vh - 56px);
+  width: 100%;
+  color: #fff;
+}
+
+.subc-header {
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #333;
+}
+
+.subc-title { font-size: 24px; font-weight: 600; margin: 0 0 8px 0; }
+.subc-count { color: #aaa; font-size: 14px; }
+
+.subc-list { display: flex; flex-direction: column; gap: 12px; }
+
+.subc-channel-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  padding: 12px;
+  transition: background-color 0.2s;
+}
+
+.subc-channel-card:hover { background-color: #222; }
+
+.subc-channel-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  color: inherit;
+  flex: 1;
+}
+
+.subc-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.subc-info { display: flex; flex-direction: column; gap: 4px; }
+.subc-username { font-size: 18px; font-weight: 500; margin: 0; }
+.subc-stats { font-size: 13px; color: #aaa; display: flex; gap: 8px; }
+
+.subc-unsubscribe-btn {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.subc-unsubscribe-btn:hover { background-color: #f44; }
+
+.subc-loading,
+.subc-error,
+.subc-empty {
+  text-align: center;
+  padding: 40px 20px;
+  color: #aaa;
+  font-size: 16px;
+}
+
+.subc-error { color: rgb(192, 44, 44); }

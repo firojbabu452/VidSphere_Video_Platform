@@ -1,0 +1,194 @@
+/* ============================================================= */
+/*  RegistrationPage.css – Full stylesheet with password fields  */
+/* ============================================================= */
+
+/* Base container - full height, dark background */
+.reg-registration-page-container {
+  background-color: #121212;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Form container - responsive width */
+.reg-registration-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;           /* Max width on large screens */
+  min-width: 280px;           /* Minimum width on small screens */
+  padding: 32px 24px;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo */
+.reg-registration-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.reg-registration-logo img {
+  width: 100%;
+  max-width: 270px;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+/* Labels */
+.reg-registration-form label {
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.reg-required {
+  color: #a259ff;
+  margin-left: 4px;
+}
+
+/* ------------------------------------------------------------- */
+/* INPUTS – text, email, password, file                          */
+/* ------------------------------------------------------------- */
+.reg-registration-form input[type='text'],
+.reg-registration-form input[type='email'],
+.reg-registration-form input[type='password'],
+.reg-registration-form input[type='file'] {
+  background-color: #1c1c1c;
+  border: 1px solid #444;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  transition: border-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.reg-registration-form input::placeholder {
+  color: #7f7f7f;
+}
+
+.reg-registration-form input:focus {
+  outline: none;
+  border-color: #a259ff;
+  box-shadow: 0 0 0 2px rgba(162, 89, 255, 0.2);
+}
+
+/* ------------------------------------------------------------- */
+/* ERROR STATES                                                  */
+/* ------------------------------------------------------------- */
+.reg-input-error {
+  border-color: #f44336 !important;
+}
+
+.reg-input-error:focus {
+  box-shadow: 0 0 0 2px rgba(244, 67, 54, 0.2);
+}
+
+.reg-error-msg {
+  margin: -8px 0 12px 0;
+  font-size: 0.8rem;
+  color: #f44336;
+}
+
+/* ------------------------------------------------------------- */
+/* SUBMIT BUTTON                                                 */
+/* ------------------------------------------------------------- */
+.reg-submit-btn {
+  background: linear-gradient(45deg, #5f2c82, #a259ff);
+  border: none;
+  color: white;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 14px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  user-select: none;
+  margin-top: 10px;
+}
+
+.reg-submit-btn:hover {
+  background: linear-gradient(45deg, #a259ff, #5f2c82);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(162, 89, 255, 0.3);
+}
+
+.reg-submit-btn:active {
+  transform: translateY(0);
+}
+
+/* ------------------------------------------------------------- */
+/* RESPONSIVE ADJUSTMENTS                                        */
+/* ------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .reg-registration-form {
+    padding: 24px 16px;
+    border-radius: 10px;
+  }
+
+  .reg-registration-form input[type='text'],
+  .reg-registration-form input[type='email'],
+  .reg-registration-form input[type='password'],
+  .reg-registration-form input[type='file'] {
+    padding: 11px 12px;
+    font-size: 0.95rem;
+  }
+
+  .reg-submit-btn {
+    padding: 13px;
+    font-size: 1.05rem;
+  }
+
+  .reg-registration-logo img {
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 360px) {
+  .reg-registration-form {
+    padding: 20px 14px;
+  }
+
+  .reg-registration-logo img {
+    max-width: 200px;
+  }
+}
+
+/* Toast Message Styles */
+.reg-message {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.reg-message-success {
+  background-color: #1e4620;
+  color: #a5d6a7;
+  border: 1px solid #2e7d32;
+}
+
+.reg-message-error {
+  background-color: #451313;
+  color: #ff8a80;
+  border: 1px solid #c62828;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

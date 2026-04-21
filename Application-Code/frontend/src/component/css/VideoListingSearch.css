@@ -1,0 +1,182 @@
+.vlsp-container {
+  background: #0f0f0f;
+  padding: 20px;
+  color: white;
+      overflow-y: scroll;
+      height: 80vh;
+      width: 100%;
+}
+
+/* HEADER */
+.vlsp-header {
+  margin-bottom: 15px;
+}
+
+.vlsp-header h2 {
+  font-size: 1.2rem;
+}
+
+/* LIST ITEMS */
+.vlsp-item {
+  border-bottom: 1px solid #222;
+  padding: 14px 0;
+  margin-bottom: 10px;
+}
+
+/* CHANNEL CARD */
+.vlsp-channel-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vlsp-channel-left {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
+
+.vlsp-channel-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.vlsp-channel-name {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.vlsp-sub-btn {
+  padding: 6px 14px;
+  border: none;
+  background: #cc0000;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.vlsp-unsub {
+  background: #333 !important;
+}
+
+/* VIDEO ITEM SMALL UI */
+.vlsp-video-wrapper {
+  display: flex;
+  gap: 10px;
+}
+
+.vlsp-list li{
+  list-style-type: none;
+}
+
+.vlsp-video-thumbnail {
+  width: 200px;
+  height: 120px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.vlsp-video-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vlsp-video-duration {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  color: white;
+}
+
+.vlsp-video-details {
+  flex: 1;
+}
+
+
+.vlsp-video-details a{
+    text-decoration: none;
+    color: white;
+}
+
+
+.vlsp-video-title {
+  font-size: 1rem;
+  margin: 0 0 5px 0;
+  font-weight: 600;
+}
+
+.vlsp-video-stats {
+  color: #aaa;
+  font-size: 0.85rem;
+}
+
+.vlsp-video-channel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #ddd;
+  text-decoration: none;
+  margin-top: 6px;
+}
+
+.vlsp-channel-img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.vlsp-video-description {
+  color: #bbb;
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+
+/* LOAD MORE BUTTON */
+.vlsp-loadmore-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.vlsp-loadmore-btn {
+  padding: 10px 18px;
+  background: #222;
+  border: 1px solid #444;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.vlsp-loadmore-btn:hover {
+  background: #333;
+}
+
+.vlsp-error {
+  background: #440000;
+  color: #ffaaaa;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 15px 0;
+  text-align: center;
+}
+
+.vlsp-no-results, .vlsp-no-query {
+  text-align: center;
+  padding: 40px;
+  color: #aaa;
+  font-size: 1.1rem;
+}
+
+.vlsp-highlight {
+  color: #ff6b6b;
+  font-weight: 600;
+}

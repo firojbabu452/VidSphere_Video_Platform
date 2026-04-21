@@ -1,0 +1,740 @@
+/* VideoDetailsPage.css */
+
+.vdp-video-details-page-container {
+  display: flex;
+  gap: 24px;
+  padding: 20px;
+  background-color: #0f0f0f;
+  height: 100vh;
+  color: white;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scrollbar-width: thin;
+  scrollbar-color: #5f2c82 #111;
+  padding: 20px;
+  color: white;
+  overflow-y: scroll;
+  height: 80vh;
+}
+
+.vdp-video-details-page-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.vdp-video-details-page-container::-webkit-scrollbar-thumb {
+  background-color: #5f2c82;
+  border-radius: 10px;
+}
+
+.vdp-video-main-section {
+  flex: 1.2;
+  /* Remove internal scrollbar */
+  overflow: visible;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.vdp-video-player-wrapper video {
+  border-radius: 6px;
+  background-color: black;
+  max-height: 360px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.vdp-video-info-section {
+  margin-top: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #222;
+}
+
+.vdp-video-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+}
+
+.vdp-video-stats {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 12px;
+}
+
+.vdp-video-actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+  align-items: center;
+}
+
+.vdp-btn-stats {
+  background-color: #222;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.vdp-btn-stats:hover {
+  background-color: #5f2c82;
+}
+
+.vdp-btn-save {
+  margin-left: auto;
+  cursor: pointer;
+  font-weight: 600;
+  border: 1px solid #666;
+  background-color: transparent;
+  padding: 6px 14px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  color: white;
+}
+
+.vdp-btn-save:hover {
+  background-color: #5f2c82;
+  border-color: #5f2c82;
+}
+
+.vdp-channel-subscribe {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #222;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 18px;
+}
+
+.vdp-channel-info {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.vdp-channel-photo img {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #444;
+}
+
+.vdp-channel-name {
+  font-weight: 700;
+  font-size: 1rem;
+  color: white;
+}
+
+.vdp-channel-subscribers {
+  color: #aaa;
+  font-size: 0.85rem;
+  margin-top: 2px;
+}
+
+.vdp-btn-subscribe {
+  background-color: #5f2c82;
+  border: none;
+  padding: 8px 18px;
+  color: white;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.vdp-btn-subscribe:hover {
+  background-color: #49a09d;
+}
+
+.vdp-video-description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #ddd;
+  max-width: 100%;
+  margin-bottom: 28px;
+}
+
+
+/* Suggested videos sidebar */
+.vdp-video-suggested-sidebar {
+  width: 340px;
+  overflow: visible; /* Remove sidebar scrollbar */
+  flex-shrink: 0;
+}
+
+.vdp-suggested-videos-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.suggVidChe{
+  text-decoration: none;
+}
+
+.vdp-suggested-video-item {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: white;
+}
+
+.vdp-suggested-thumbnail {
+  position: relative;
+  width: 140px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.vdp-suggested-thumbnail img {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.vdp-suggested-length {
+  position: absolute;
+  bottom: 6px;
+  right: 1px;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: 2px;
+  user-select: none;
+}
+
+.vdp-suggested-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.vdp-suggested-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: white;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.vdp-suggested-channel,
+.vdp-suggested-stats {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin: 2px 0 0 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.vdp-icon {
+  width: 18px;
+  height: 18px;
+}
+
+
+
+
+
+
+.vdp-comments-section {
+  width: 100%;
+}
+
+.vdp-comments-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+/* Comments list */
+.vdp-comments-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: none; /* Allow growing with container */
+  overflow: visible;
+}
+
+.vdp-comment-item {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.vdp-comment-user-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #444;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.vdp-comment-content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.vdp-comment-user-info {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.vdp-comment-user-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: white;
+}
+
+.vdp-comment-user-handle-time {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.vdp-comment-content {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #ddd;
+}
+
+.vdp-comment-input {
+  width: 100%;
+  background-color: #222;
+  border: none;
+  color: white;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border-radius: 6px;
+  resize: none;
+  margin-bottom: 18px;
+  box-sizing: border-box;
+}
+
+.vdp-comment-input:focus {
+  outline: 2px solid #5f2c82;
+  background-color: #333;
+}
+
+.vdp-comment-input-wrapper {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.vdp-comment-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  justify-content: flex-end;
+}
+
+.vdp-comment-btn {
+  padding: 6px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.vdp-comment-btn-primary {
+  background-color: #5f2c82;
+  color: white;
+}
+
+.vdp-comment-btn-primary:hover:not(:disabled) {
+  background-color: #7c3aed;
+}
+
+.vdp-comment-btn-primary:disabled {
+  background-color: #444;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.vdp-comment-btn-cancel {
+  background-color: transparent;
+  color: #999;
+  border: 1px solid #444;
+}
+
+.vdp-comment-btn-cancel:hover {
+  background-color: #333;
+  color: white;
+}
+
+
+.vdp-comment-like {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 1px;
+}
+
+
+.vdp-comment-like-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 3px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease-in-out;
+  color: white;
+}
+
+
+.vdp-comment-like-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+.vdp-comment-like-btn svg {
+  transition: 0.25s ease;
+}
+
+.vdp-comment-like-btn:hover svg {
+  transform: scale(1.1);
+}
+
+
+.vdp-comment-like span {
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+
+
+
+
+/* Video Info */
+/* .wth-video-info {
+  padding: 4px 0 4px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  gap: 6px;
+  min-width: 0;
+}
+
+.wth-video-title {
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.35;
+  color: #fff;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+} */
+
+.vdp-channel-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.vdp-channel-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.vdp-video-channel {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+
+
+
+
+/* Save to Playlist Modal */
+.vdp-save-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.vdp-save-modal {
+  background: #1a1a1a;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow: hidden;
+  color: white;
+  animation: modalPop 0.3s ease-out;
+}
+
+.vdp-save-modal-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.vdp-save-modal-close {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #aaa;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vdp-save-modal-close:hover {
+  color: white;
+}
+
+.vdp-save-modal-body {
+  padding: 20px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.vdp-save-playlist-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.vdp-save-playlist-item {
+  margin-bottom: 12px;
+}
+
+.vdp-save-playlist-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  padding: 8px 4px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.vdp-save-playlist-label:hover {
+  background: #222;
+}
+
+.vdp-save-playlist-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #5f2c82;
+  cursor: pointer;
+}
+
+.vdp-save-playlist-name {
+  flex: 1;
+  font-size: 0.95rem;
+}
+
+.vdp-save-playlist-count {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.vdp-save-modal-footer {
+  padding: 16px 20px;
+  border-top: 1px solid #333;
+  text-align: right;
+}
+
+.vdp-save-modal-done {
+  background: #5f2c82;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.vdp-save-modal-done:hover {
+  background: #7c3aed;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalPop {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .vdp-save-modal {
+    width: 95%;
+    margin: 20px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ====================== RESPONSIVE LAYOUT ====================== */
+
+
+
+/* Mobile & Tablet: Stack vertically */
+@media (max-width: 968px) {
+  .vdp-video-details-page-container {
+    flex-direction: column;
+    padding: 12px;
+    height: auto;
+    overflow-x: hidden;
+  }
+
+  /* Main section (video + info + comments) takes full width */
+  .vdp-video-main-section {
+    flex: none;
+    width: 100%;
+  }
+
+  /* Suggested videos go BELOW comments */
+  .vdp-video-suggested-sidebar {
+    width: 100%;
+    margin-top: 40px;
+    order: 3; /* ensures it appears after comments */
+  }
+
+  /* Optional: make suggested videos horizontal scroll on very small screens */
+  .vdp-suggested-videos-list {
+    display: flex;
+    overflow-y: auto;
+    gap: 12px;
+    padding-bottom: 10px;
+  }
+
+  .vdp-suggested-video-item {
+    min-width: 300px;
+    flex-direction: column;
+  }
+
+  .vdp-suggested-thumbnail {
+    width: 100%;
+    height: 170px;
+  }
+
+  .vdp-suggested-thumbnail img {
+    height: 100%;
+  }
+}
+
+/* ====================== COMMENTS SCROLL ON MOBILE ONLY ====================== */
+
+@media (max-width: 968px) {
+  /* Make only comments scrollable — video stays at top */
+  .vdp-comments-section {
+    max-height: 70vh;           /* limits height */
+    overflow-y: auto;           /* enables scroll */
+    padding-right: 8px;         /* space for scrollbar */
+    margin-top: 20px;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+  }
+
+  /* Nice scrollbar for mobile comments */
+  .vdp-comments-section::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .vdp-comments-section::-webkit-scrollbar-thumb {
+    background-color: #5f2c82;
+    border-radius: 10px;
+  }
+
+  /* Hide scrollbar on very small screens if needed */
+  .vdp-comments-list {
+    padding-bottom: 20px;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+  .vdp-video-player-wrapper video {
+    height: 220px !important;
+  }
+
+  .vdp-video-actions {
+    flex-wrap: wrap;
+  }
+
+  .vdp-btn-save {
+    margin-left: 0;
+    margin-top: 8px;
+  }
+}
+

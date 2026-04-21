@@ -1,0 +1,277 @@
+/* -------------------------------------------------
+   UploadVideo.css – fully responsive & scoped
+   ------------------------------------------------- */
+
+.upv-upload-video-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: #fff;
+  background-color: #111;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 680px;          /* comfortable max width */
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ---------- FORM ---------- */
+.upv-upload-video-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ---------- DROP ZONE ---------- */
+.upv-drop-zone {
+  border: 2px dashed #5f2c82;
+  border-radius: 8px;
+  padding: 32px 16px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  color: #bbb;
+  transition: background 0.2s ease;
+}
+
+.upv-drop-zone:hover {
+  background: rgba(95, 44, 130, 0.08);
+}
+
+.upv-upload-icon {
+  font-size: clamp(36px, 8vw, 48px);
+  color: #5f2c82;
+  margin-bottom: 12px;
+}
+
+.upv-drop-text {
+  margin: 0 0 4px;
+  font-size: clamp(0.95rem, 2.5vw, 1rem);
+}
+.upv-drop-subtext {
+  margin: 0;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  color: #aaa;
+}
+
+/* ---------- BUTTONS ---------- */
+.upv-select-file-btn,
+.upv-upload-submit-btn {
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s ease;
+  user-select: none;
+}
+
+.upv-select-file-btn {
+  background-color: #5f2c82;
+  color: #fff;
+  padding: 8px 20px;
+  margin-top: 12px;
+  font-size: clamp(0.9rem, 2.2vw, 1rem);
+}
+.upv-select-file-btn:hover { background-color: #49a09d; }
+
+.upv-upload-submit-btn {
+  margin-top: 8px;
+  background: linear-gradient(45deg, #5f2c82, #a259ff);
+  padding: 14px 0;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+}
+.upv-upload-submit-btn:hover {
+  background: linear-gradient(45deg, #a259ff, #5f2c82);
+}
+
+/* ---------- INPUTS & TEXTAREA ---------- */
+.upv-upload-video-form label {
+  font-weight: 700;
+  font-size: clamp(0.95rem, 2.2vw, 1rem);
+}
+
+.upv-upload-video-form input[type='text'],
+.upv-upload-video-form input[type='file'],
+.upv-upload-video-form textarea {
+  background-color: #222;
+  border: 1px solid #444;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 6px;
+  padding: 10px 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.upv-upload-video-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+.upv-upload-video-form input[type='text']:focus,
+.upv-upload-video-form input[type='file']:focus,
+.upv-upload-video-form textarea:focus {
+  outline: none;
+  border-color: #5f2c82;
+}
+
+/* ---------- SELECTED FILE NAME ---------- */
+.upv-selected-file-name {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #ddd;
+}
+
+/* ---------- PUBLISH TOGGLE ---------- */
+.upv-publish-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+.upv-publish-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: #5f2c82;
+}
+.upv-publish-text {
+  font-weight: 500;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+/* ---------- THUMBNAIL PREVIEW ---------- */
+.upv-thumbnail-preview {
+  margin-top: 12px;
+  text-align: center;
+}
+.upv-thumbnail-preview p {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+.upv-thumbnail-preview img {
+  max-width: 100%;
+  max-height: 180px;
+  border-radius: 6px;
+  box-shadow: 0 0 8px rgba(95, 44, 130, 0.6);
+}
+
+/* -------------------------------------------------
+   RESPONSIVE BREAKPOINTS
+   ------------------------------------------------- */
+@media (max-width: 480px) {
+  .upv-upload-video-container { padding: 16px; }
+  .upv-drop-zone { padding: 24px 12px; }
+  .upv-select-file-btn,
+  .upv-upload-submit-btn { font-size: 0.95rem; }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .upv-upload-video-container { padding: 18px; }
+}
+
+@media (min-width: 769px) {
+  .upv-upload-video-container { padding: 24px; }
+}
+
+
+/* -------------------------------------------------
+   TOAST NOTIFICATIONS
+   ------------------------------------------------- */
+.upv-upload-toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 260px;
+  max-width: 90vw;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  animation: upvToastFadeIn 0.3s ease-out;
+  z-index: 1000;
+}
+
+.upv-upload-toast--uploading {
+  background: #333;
+  color: #fff;
+}
+.upv-upload-toast--success {
+  background: linear-gradient(45deg, #1e4620, #2e7d32);
+  color: #a5d6a7;
+  border: 1px solid #2e7d32;
+}
+.upv-upload-toast--error {
+    background-color: #451313;
+  color: #ff8a80;
+  border: 1px solid #c62828;
+}
+
+@keyframes upvToastFadeIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* ---------- CATEGORY SELECT ----------Dos */
+.upv-category-select {
+  background-color: #222;
+  border: 1px solid #444;
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.upv-category-select:focus {
+  outline: none;
+  border-color: #5f2c82;
+}
+
+/* ---------- TAGS SECTION ---------- */
+.upv-tags-section {
+  margin-top: 16px;
+  padding: 16px;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+.upv-tags-label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: #ddd;
+}
+
+.upv-tags-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.upv-tag-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  user-select: none;
+  color: #ccc;
+  padding: 4px 0;
+}
+
+.upv-tag-checkbox-label input[type="checkbox"] {
+  accent-color: #5f2c82;
+  width: 16px;
+  height: 16px;
+}
+
+.upv-tags-warning {
+  color: #ff8a80;
+  font-size: 0.85rem;
+  margin-top: 8px;
+  font-style: italic;
+}

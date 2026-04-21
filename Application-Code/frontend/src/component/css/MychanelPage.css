@@ -1,0 +1,112 @@
+.my-chanel-page-container {
+  background-color: #111;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  /* max-width: 1080px; */
+  margin: 0 auto;
+  padding: 20px 16px;
+  box-sizing: border-box;
+   overflow-y: auto;
+}
+
+.my-chanel-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.my-chanel-avatar img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #5f2c82;
+}
+
+.my-chanel-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.my-chanel-name {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.my-chanel-handle {
+  color: #aaa;
+  margin: 4px 0 0 0;
+  font-size: 0.95rem;
+}
+
+.my-chanel-substats {
+  margin: 6px 0 0 0;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.btn-subscribe {
+  background-color: #5f2c82;
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+}
+
+.btn-subscribe:hover {
+  background-color: #49a09d;
+}
+
+.my-chanel-nav {
+  display: flex;
+  gap: 32px;
+  border-bottom: 2px solid #222;
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+}
+
+.my-chanel-nav-item {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 8px 0;
+  color: #bbb;
+  position: relative;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.my-chanel-nav-item:hover {
+  color: #fff;
+}
+
+.my-chanel-nav-item.active {
+  color: #5f2c82;
+  font-weight: 700;
+}
+
+.my-chanel-nav-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: #5f2c82;
+  border-radius: 2px 2px 0 0;
+}
+
+.my-chanel-content {
+  min-height: 400px;
+}

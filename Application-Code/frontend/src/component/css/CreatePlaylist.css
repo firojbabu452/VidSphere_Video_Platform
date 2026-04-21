@@ -1,0 +1,262 @@
+/* All classes prefixed with cps- */
+.cps-playlist-section {
+    padding: 20px 0;
+    background-color: #111;
+    color: #fff;
+}
+
+.cps-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 0 12px;
+}
+
+.cps-title {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.cps-create-btn {
+    background: #ff0000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cps-create-btn:hover {
+    background: #cc0000;
+}
+
+.cps-playlist-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0 12px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(460px, 1fr));
+}
+
+.cps-no-playlist {
+    text-align: center;
+    color: #aaa;
+    padding: 40px;
+}
+
+.cps-playlist-card {
+    position: relative;
+    display: flex;
+    gap: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+    border-radius: 8px;
+    padding: 8px;
+     background: rgba(255, 255, 255, 0.021);
+}
+
+.cps-playlist-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.cps-thumbnail-wrapper {
+    position: relative;
+    flex: 0 0 220px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.cps-thumbnail-wrapper img {
+    width: 100%;
+    height: 124px;
+    object-fit: cover;
+    transition: filter 0.2s;
+}
+
+.cps-playlist-card:hover .cps-thumbnail-wrapper img {
+    filter: brightness(0.85);
+}
+
+.cps-overlay {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    right: 8px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.84rem;
+    font-weight: 600;
+    background: rgba(0, 0, 0, 0.55);
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.cps-videos,
+.cps-meta {
+    color: white;
+}
+
+.cps-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cps-title-text {
+    margin: 0 0 4px 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.cps-desc {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #aaa;
+    line-height: 1.35;
+}
+
+.cps-actions {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    gap: 8px;
+}
+
+.cps-edit-btn,
+.cps-delete-btn {
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.cps-edit-btn:hover {
+    background: #0066cc;
+}
+
+.cps-delete-btn:hover {
+    background: #cc0000;
+}
+
+/* Modal Styles */
+.cps-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.cps-modal,
+.cps-modal-wide {
+    background: #222;
+    padding: 40px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.cps-modal-wide {
+    max-width: 800px;
+}
+
+.cps-modal h3,
+.cps-modal-title {
+    margin-top: 0;
+}
+
+.cps-input,
+.cps-textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background: #333;
+    border: 1px solid #555;
+    color: white;
+    border-radius: 6px;
+}
+
+.cps-modal-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.cps-cancel-btn,
+.cps-submit-btn,
+.cps-close-modal-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.cps-submit-btn {
+    background: #ff0000;
+    color: white;
+}
+
+.cps-cancel-btn,
+.cps-close-modal-btn {
+    background: #444;
+    color: white;
+}
+
+.cps-video-list {
+    margin-top: 20px;
+}
+
+.cps-video-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: #333;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.cps-video-thumb {
+    width: 120px;
+    height: 68px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.cps-remove-video-btn {
+    background: #cc0000;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+@media (max-width: 768px) {
+    .cps-playlist-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cps-thumbnail-wrapper {
+        flex: 0 0 180px;
+    }
+
+    .cps-thumbnail-wrapper img {
+        height: 100px;
+    }
+}
