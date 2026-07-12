@@ -9,7 +9,7 @@
     "start": "node src/index.js",
     "test": "jest"
   },
-  "author": "Abhijit Maity",
+  "author": "Firoj Sardar",
   "license": "ISC",
   "devDependencies": {
     "jest": "^29.7.0",
@@ -28,4 +28,4 @@
     "mongoose-aggregate-paginate-v2": "^1.1.4",
     "multer": "^2.0.2"
   }
-}}
+}
