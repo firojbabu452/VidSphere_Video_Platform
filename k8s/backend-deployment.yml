@@ -6,7 +6,7 @@ metadata:
   labels:
     app: vidsphere-backend
 spec:
-  replicas: 2
+  replicas: 3
 
   selector:
     matchLabels:
@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: firojbabu452/vidsphere-backend:5be5fc2e74103664b06512c578c83bcbaf974911
+          image: firojbabu452/vidsphere-backend:a9afe1b620729e5baf8ee9ddfc02cc1e1e3c6f2a
 
           imagePullPolicy: Always
 

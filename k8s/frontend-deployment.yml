@@ -7,7 +7,7 @@ metadata:
     app: vidsphere-frontend
 
 spec:
-  replicas: 2
+  replicas: 3
 
   selector:
     matchLabels:
@@ -22,7 +22,7 @@ spec:
       containers:
         - name: frontend
 
-          image: firojbabu452/vidsphere-frontend:5be5fc2e74103664b06512c578c83bcbaf974911
+          image: firojbabu452/vidsphere-frontend:a9afe1b620729e5baf8ee9ddfc02cc1e1e3c6f2a
           imagePullPolicy: Always
 
           ports:
