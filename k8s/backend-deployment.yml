@@ -20,8 +20,7 @@ spec:
     spec:
       containers:
         - name: backend
-
-          image: firojbabu452/vidsphere-backend:4ca79c30898b62b71b96b06a4ad0cd4ecb6c47f1
+          image: firojbabu452/vidsphere-backend:19fd662274ca8e79cf3d42ca6373222c2647b1ed
 
           imagePullPolicy: Always
 
@@ -35,7 +34,7 @@ spec:
             - name: NODE_ENV
               value: "production"
 
-            - name: MONGO_URI
+            - name: MONGODB_URI
               valueFrom:
                 secretKeyRef:
                   name: backend-secret
