@@ -1,0 +1,71 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vidsphere-backend
+  namespace: vidsphere 
+  labels:
+    app: vidsphere-backend
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: vidsphere-backend
+
+  template:
+    metadata:
+      labels:
+        app: vidsphere-backend
+
+    spec:
+      containers:
+        - name: backend
+
+          image: firojbabu452/vidsphere-backend:4ca79c30898b62b71b96b06a4ad0cd4ecb6c47f1
+
+          imagePullPolicy: Always
+
+          ports:
+            - containerPort: 5000
+
+          env:
+            - name: PORT
+              value: "5000"
+
+            - name: NODE_ENV
+              value: "production"
+
+            - name: MONGO_URI
+              valueFrom:
+                secretKeyRef:
+                  name: backend-secret
+                  key: mongo-uri
+
+            - name: JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: backend-secret
+                  key: jwt-secret
+
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+            initialDelaySeconds: 30
+            periodSeconds: 10
+
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+            initialDelaySeconds: 10
+            periodSeconds: 5
