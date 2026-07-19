@@ -104,9 +104,9 @@ const VideoListingSearch = () => {
 
   const loadMore = () => {
     if (hasMore && !loading) {
-      const nextPage = page + 1;
-      setPage(nextPage);
-      fetchResults(nextPage);
+      const nextPage2 = page + 1;
+      setPage(nextPage2);
+      fetchResults(nextPage2);
     }
   };
 
