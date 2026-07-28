@@ -21,7 +21,7 @@ COPY --from=build /app/src ./src
 # Security: Essential for EKS/Production
 USER node
 
-EXPOSE 8000
+EXPOSE 5000
 
 # Start command
 CMD ["node", "src/index.js"]
