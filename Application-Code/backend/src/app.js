@@ -63,7 +63,11 @@ app.use("/api/v1/likes",likeRouter);
 app.use("/api/v1/comment", commentRouter);
 app.use("/api/v1/search", searchcontentRouter);
 app.use("/api/v1/playlist", playlistRouter);
-
+app.get("/health", (req, res) => {
+  res.status(200).json({
+    status: "ok"
+  });
+});
 app.use(errorHandler);
 export {app};
 
