@@ -4,19 +4,19 @@ metadata:
   name: vidsphere
   namespace: argocd                   
   finalizers:
-    - resources-finalizer.argocd.argoproj.io 
+    - resources-finalizer.argocd.argoproj.io  # Ensures cascading deletion of resources
 spec:
-  project: default                  
+  project: default                        # The Argo CD project this app belongs to
   source:
-    repoURL: 'https://github.com/firojbabu452/VidSphere_Video_Platform.git'
+    repoURL: 'https://github.com/firojbabu452/VidSphere_Video_Platform.git' # Your Git repository
     targetRevision: development              
-    path: VidSphere_Video_Platform/argocd/k8s                 
+    path: argocd/k8s                      # Points directly to argocd/k8s inside the repo
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: vidsphere          
   syncPolicy:
-    automated:                           
+    automated:                            
       prune: true                        
       selfHeal: true                  
     syncOptions:
-      - CreateNamespace=true     
+      - CreateNamespace=true
