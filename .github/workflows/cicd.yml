@@ -79,17 +79,17 @@ jobs:
       - name: Update Backend Image Tag
         run: |
           sed -i "s|image: ${{ secrets.DOCKERHUB_USERNAME }}/vidsphere-backend:.*|image: ${{ secrets.DOCKERHUB_USERNAME }}/vidsphere-backend:${{ github.sha }}|g" \
-          argocd/k8s/backend-deployment.yaml
+          argocd/k8s/backend-deployment.yml
 
       - name: Update Frontend Image Tag
         run: |
           sed -i "s|image: ${{ secrets.DOCKERHUB_USERNAME }}/vidsphere-frontend:.*|image: ${{ secrets.DOCKERHUB_USERNAME }}/vidsphere-frontend:${{ github.sha }}|g" \
-          argocd/k8s/frontend-deployment.yaml
+          argocd/k8s/frontend-deployment.yml
 
       - name: Commit Manifest Changes
         run: |
-          git add argocd/k8s/backend-deployment.yaml
-          git add argocd/k8s/frontend-deployment.yaml
+          git add argocd/k8s/backend-deployment.yml
+          git add argocd/k8s/frontend-deployment.yml
 
           git diff --cached --quiet || git commit -m "Update images to ${{ github.sha }}"
 
