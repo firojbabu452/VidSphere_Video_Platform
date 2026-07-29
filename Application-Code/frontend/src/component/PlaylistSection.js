@@ -31,7 +31,7 @@ const PlaylistSection = ({ channelId }) => {
 
   const fetchPlaylists = async () => {
     try {
-      const response = await fetch(`http://localhost:8000/api/v1/playlist/getPlaylist/${userId}`, {
+      const response = await fetch(`http://localhost:5000/api/v1/playlist/getPlaylist/${userId}`, {
         method: 'GET',
         credentials: 'include', // Sends cookies for authentication
       });

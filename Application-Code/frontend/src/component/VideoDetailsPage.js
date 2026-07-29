@@ -51,7 +51,7 @@ const VideoDetailsPage = () => {
   useEffect(() => {
     const fetchVideo = async () => {
       try {
-        const res = await fetch(`http://localhost:8000/api/v1/videos/v/${videoId}`, {
+        const res = await fetch(`http://localhost:5000/api/v1/videos/v/${videoId}`, {
           method: "GET",
           credentials: "include",
         });
@@ -76,7 +76,7 @@ const VideoDetailsPage = () => {
     const fetchsuggestedVideos = async () => {
       try {
         const res = await fetch(
-          `http://localhost:8000/api/v1/videos/getVideosforDetailsPage/${videoId}`,
+          `http://localhost:5000/api/v1/videos/getVideosforDetailsPage/${videoId}`,
           { method: "GET", credentials: "include" }
         );
         const json = await res.json();
@@ -93,7 +93,7 @@ const VideoDetailsPage = () => {
   /* -------------------- FETCH COMMENTS -------------------- */
   const fetchComments = useCallback(async () => {
     try {
-      const res = await fetch(`http://localhost:8000/api/v1/comment/${videoId}`, {
+      const res = await fetch(`http://localhost:5000/api/v1/comment/${videoId}`, {
         method: "GET",
         credentials: "include",
       });
@@ -115,7 +115,7 @@ const VideoDetailsPage = () => {
   const toggleLike = async () => {
     try {
       const res = await fetch(
-        `http://localhost:8000/api/v1/likes/toggle/v/${videoId}`,
+        `http://localhost:5000/api/v1/likes/toggle/v/${videoId}`,
         { method: "POST", credentials: "include" }
       );
       const json = await res.json();
@@ -132,7 +132,7 @@ const VideoDetailsPage = () => {
   const toggleSubscribe = async () => {
     try {
       const res = await fetch(
-        `http://localhost:8000/api/v1/subscriptions/c/${videoData.owner._id}`,
+        `http://localhost:5000/api/v1/subscriptions/c/${videoData.owner._id}`,
         { method: "POST", credentials: "include" }
       );
       const json = await res.json();
@@ -150,7 +150,7 @@ const VideoDetailsPage = () => {
   const toggleCommentLike = async (commentId) => {
     try {
       const res = await fetch(
-        `http://localhost:8000/api/v1/likes/toggle/c/${commentId}`,
+        `http://localhost:5000/api/v1/likes/toggle/c/${commentId}`,
         { method: "POST", credentials: "include" }
       );
       const json = await res.json();
@@ -168,7 +168,7 @@ const VideoDetailsPage = () => {
     const data = new FormData();
     data.append("content", newComment);
     try {
-      const res = await fetch(`http://localhost:8000/api/v1/comment/${videoId}`, {
+      const res = await fetch(`http://localhost:5000/api/v1/comment/${videoId}`, {
         method: "POST",
         credentials: "include",
         body: data,
@@ -210,7 +210,7 @@ const VideoDetailsPage = () => {
       setLoadingPlaylists(true);
       try {
         const res = await fetch(
-          `http://localhost:8000/api/v1/playlist/getPlaylistForSave/${videoId}`,
+          `http://localhost:5000/api/v1/playlist/getPlaylistForSave/${videoId}`,
           { method: "GET", credentials: "include" }
         );
         const json = await res.json();
@@ -230,7 +230,7 @@ const VideoDetailsPage = () => {
   const togglePlaylistSave = async (playlistId, currentIsSaved) => {
     try {
       const res = await fetch(
-        `http://localhost:8000/api/v1/playlist/addVideoToPlaylist/${playlistId}/${videoId}`,
+        `http://localhost:5000/api/v1/playlist/addVideoToPlaylist/${playlistId}/${videoId}`,
         { method: "POST", credentials: "include" }
       );
       const json = await res.json();

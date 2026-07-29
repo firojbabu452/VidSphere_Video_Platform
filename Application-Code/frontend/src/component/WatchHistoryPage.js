@@ -41,7 +41,7 @@ const WatchHistoryPage = () => {
      
       
       const res = await fetch(
-        `http://localhost:8000/api/v1/user/history?page=${pageNum}&limit=5`,
+        `http://localhost:5000/api/v1/user/history?page=${pageNum}&limit=5`,
         {
           method: 'GET',
           credentials: 'include',
@@ -84,7 +84,7 @@ const WatchHistoryPage = () => {
     // if (!window.confirm('Remove this video from watch history?')) return;
 
     try {
-      const res = await fetch(`http://localhost:8000/api/v1/user/history/${videoId}`, {
+      const res = await fetch(`http://localhost:5000/api/v1/user/history/${videoId}`, {
         method: 'DELETE',
         credentials: 'include',
       });
@@ -104,7 +104,7 @@ const WatchHistoryPage = () => {
     if (!window.confirm('Are you sure you want to clear all watch history?')) return;
 
     try {
-      const res = await fetch('http://localhost:8000/api/v1/user/clearhistory', {
+      const res = await fetch('http://localhost:5000/api/v1/user/clearhistory', {
         method: 'DELETE',
         credentials: 'include',
       });

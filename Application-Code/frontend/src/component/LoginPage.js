@@ -54,7 +54,7 @@ const LoginPage = () => {
 
       try {
         const response = await fetch(
-          "http://localhost:8000/api/v1/user/login",
+          "http://localhost:5000/api/v1/user/login",
           {
             method: "POST",
             headers: {

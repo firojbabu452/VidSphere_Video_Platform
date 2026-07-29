@@ -14,7 +14,7 @@ const Header = () => {
   const handleLogout = async () => {
   
     try {
-      const res = await fetch("http://localhost:8000/api/v1/user/logout", {
+      const res = await fetch("http://localhost:5000/api/v1/user/logout", {
         method: "POST",
         credentials: "include",
       });

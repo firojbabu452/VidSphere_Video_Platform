@@ -52,7 +52,7 @@ const VideoListingSearch = () => {
 
     try {
       const res = await axios.get(
-        `http://localhost:8000/api/v1/search/s/${encodeURIComponent(searchTerm)}`,
+        `http://localhost:5000/api/v1/search/s/${encodeURIComponent(searchTerm)}`,
         {
           params: { page: pageNum, limit: 5 },
           withCredentials: true,
@@ -114,7 +114,7 @@ const VideoListingSearch = () => {
   const toggleSubscribe = async (channelId, index) => {
     try {
       const res = await axios.post(
-        `http://localhost:8000/api/v1/subscriptions/c/${channelId}`,
+        `http://localhost:5000/api/v1/subscriptions/c/${channelId}`,
         {},
         { withCredentials: true } 
       );

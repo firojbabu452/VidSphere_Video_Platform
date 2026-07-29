@@ -84,7 +84,7 @@ const UploadVideo = () => {
     data.append('meta_tag', JSON.stringify(selectedTags)); // Send as JSON string
 
     try {
-      const response = await fetch('http://localhost:8000/api/v1/videos', {
+      const response = await fetch('http://localhost:5000/api/v1/videos', {
         method: 'POST',
         body: data,
         credentials: 'include',

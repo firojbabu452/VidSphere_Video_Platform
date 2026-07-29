@@ -78,7 +78,7 @@ const RegistrationPage = () => {
 
       try {
         const response = await fetch(
-          'http://localhost:8000/api/v1/user/register',
+          'http://localhost:5000/api/v1/user/register',
           {
             method: 'POST',
             body: data,

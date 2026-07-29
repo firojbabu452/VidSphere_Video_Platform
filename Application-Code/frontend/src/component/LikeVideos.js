@@ -11,7 +11,7 @@ const LikeVideos = () => {
   const fetchLikedVideos = async () => {
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:8000/api/v1/videos/getLikeVideos", {
+      const res = await fetch("http://localhost:5000/api/v1/videos/getLikeVideos", {
         method: "GET",
         credentials: "include",
       });
@@ -35,7 +35,7 @@ const LikeVideos = () => {
   const handleUnlike = async (videoId) => {
     try {
       const res = await fetch(
-        `http://localhost:8000/api/v1/likes/toggle/v/${videoId}`,
+        `http://localhost:5000/api/v1/likes/toggle/v/${videoId}`,
         {
           method: "POST",
           credentials: "include",

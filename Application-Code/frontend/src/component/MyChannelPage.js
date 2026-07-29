@@ -42,7 +42,7 @@ const MyChannelPage = () => {
       try {
         setLoading(true);
         const res = await fetch(
-          `http://localhost:8000/api/v1/user/getChanneldetails/${channelId}`,
+          `http://localhost:5000/api/v1/user/getChanneldetails/${channelId}`,
           {
             method: "GET",
             credentials: "include", 
@@ -72,7 +72,7 @@ const MyChannelPage = () => {
     if (!channelId || ismychannel) return; 
     try {
       const res = await fetch(
-        `http://localhost:8000/api/v1/subscriptions/c/${channelId}`,
+        `http://localhost:5000/api/v1/subscriptions/c/${channelId}`,
         {
           method: "POST",
           credentials: "include",

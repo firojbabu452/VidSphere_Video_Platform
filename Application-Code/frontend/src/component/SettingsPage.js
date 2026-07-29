@@ -19,7 +19,7 @@ const SettingsPage = () => {
   // Fetch current user
   const fetchCurrentUser = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/v1/user/current-user", {
+      const res = await fetch("http://localhost:5000/api/v1/user/current-user", {
         method: "GET",
         credentials: "include",
       });
@@ -51,7 +51,7 @@ const SettingsPage = () => {
     if (!oldPassword || !newPassword) return showMessage("Both fields required", true);
 
     try {
-      const res = await fetch("http://localhost:8000/api/v1/user/change-password", {
+      const res = await fetch("http://localhost:5000/api/v1/user/change-password", {
         method: "POST",
         credentials: "include",
         headers: { "Content-Type": "application/json" },
@@ -76,7 +76,7 @@ const SettingsPage = () => {
     if (!fullname && !email) return;
 
     try {
-      const res = await fetch("http://localhost:8000/api/v1/user/update-account-details", {
+      const res = await fetch("http://localhost:5000/api/v1/user/update-account-details", {
         method: "PATCH",
         credentials: "include",
         headers: { "Content-Type": "application/json" },
@@ -102,7 +102,7 @@ const SettingsPage = () => {
     formData.append("avatar", file);
 
     try {
-      const res = await fetch("http://localhost:8000/api/v1/user/update-avtar", {
+      const res = await fetch("http://localhost:5000/api/v1/user/update-avtar", {
         method: "PATCH",
         credentials: "include",
         body: formData,
@@ -127,7 +127,7 @@ const SettingsPage = () => {
     formData.append("coverImage", file);
 
     try {
-      const res = await fetch("http://localhost:8000/api/v1/user/update-cover-image", {
+      const res = await fetch("http://localhost:5000/api/v1/user/update-cover-image", {
         method: "PATCH",
         credentials: "include",
         body: formData,
@@ -146,7 +146,7 @@ const SettingsPage = () => {
   const handleLogout = async () => {
   
     try {
-      const res = await fetch("http://localhost:8000/api/v1/user/logout", {
+      const res = await fetch("http://localhost:5000/api/v1/user/logout", {
         method: "POST",
         credentials: "include",
       });

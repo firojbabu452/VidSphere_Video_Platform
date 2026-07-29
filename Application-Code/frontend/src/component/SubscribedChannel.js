@@ -12,7 +12,7 @@ const SubscribedChannel = () => {
   const fetchSubscribedChannels = async () => {
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:8000/api/v1/subscriptions/getSubscribedChannel", {
+      const res = await fetch("http://localhost:5000/api/v1/subscriptions/getSubscribedChannel", {
         method: "GET",
         credentials: "include",
       });
@@ -36,7 +36,7 @@ const SubscribedChannel = () => {
   const handleUnsubscribe = async (channelId) => {
 
     try {
-      const res = await fetch(`http://localhost:8000/api/v1/subscriptions/c/${channelId}`, {
+      const res = await fetch(`http://localhost:5000/api/v1/subscriptions/c/${channelId}`, {
         method: "POST",
         credentials: "include",
       });

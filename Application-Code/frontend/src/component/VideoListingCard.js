@@ -55,7 +55,7 @@ const VideoListing = () => {
 
     try {
       const res = await fetch(
-        `http://localhost:8000/api/v1/videos/getvideos?page=${pageNum}&limit=${limit}`,
+        `http://localhost:5000/api/v1/videos/getvideos?page=${pageNum}&limit=${limit}`,
         {
           method: "GET",
           credentials: "include",

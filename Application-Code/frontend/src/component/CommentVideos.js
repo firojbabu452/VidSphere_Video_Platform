@@ -17,7 +17,7 @@ const CommentVideos = () => {
   const fetchMyComments = async () => {
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:8000/api/v1/comment/getAllComments", {
+      const res = await fetch("http://localhost:5000/api/v1/comment/getAllComments", {
         method: "GET",
         credentials: "include",
       });
@@ -59,7 +59,7 @@ const CommentVideos = () => {
 
     try {
       const res = await fetch(
-        `http://localhost:8000/api/v1/comment/editComment/${editingCommentId}`,
+        `http://localhost:5000/api/v1/comment/editComment/${editingCommentId}`,
         {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
@@ -93,7 +93,7 @@ const CommentVideos = () => {
 
     try {
       const res = await fetch(
-        `http://localhost:8000/api/v1/comment/deleteComments/${commentId}`,
+        `http://localhost:5000/api/v1/comment/deleteComments/${commentId}`,
         {
           method: "DELETE",
           credentials: "include",

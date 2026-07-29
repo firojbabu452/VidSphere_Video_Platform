@@ -38,7 +38,7 @@ const CreatePlaylist = ({ channelId }) => {
 
   const fetchPlaylists = async () => {
     try {
-      const response = await fetch(`http://localhost:8000/api/v1/playlist/getPlaylist/${userId}`, {
+      const response = await fetch(`http://localhost:5000/api/v1/playlist/getPlaylist/${userId}`, {
         method: 'GET',
         credentials: 'include', // Important for sending cookies (withCredentials: true)
       });
@@ -57,8 +57,8 @@ const CreatePlaylist = ({ channelId }) => {
     e.preventDefault();
 
     const url = isEditMode
-      ? `http://localhost:8000/api/v1/playlist/updatePlaylist/${selectedPlaylist._id}`
-      : `http://localhost:8000/api/v1/playlist/createPlaylist`;
+      ? `http://localhost:5000/api/v1/playlist/updatePlaylist/${selectedPlaylist._id}`
+      : `http://localhost:5000/api/v1/playlist/createPlaylist`;
 
     const method = isEditMode ? 'PATCH' : 'POST';
 
@@ -98,7 +98,7 @@ const CreatePlaylist = ({ channelId }) => {
     // if (!window.confirm("Are you sure you want to delete this playlist?")) return;
 
     try {
-      const response = await fetch(`http://localhost:8000/api/v1/playlist/deletePlaylist/${playlistId}`, {
+      const response = await fetch(`http://localhost:5000/api/v1/playlist/deletePlaylist/${playlistId}`, {
         method: 'DELETE',
         credentials: 'include',
       });
@@ -118,7 +118,7 @@ const CreatePlaylist = ({ channelId }) => {
 
     try {
       const response = await fetch(
-        `http://localhost:8000/api/v1/playlist/removeVideoFromPlaylist/${selectedPlaylist._id}/${videoId}`,
+        `http://localhost:5000/api/v1/playlist/removeVideoFromPlaylist/${selectedPlaylist._id}/${videoId}`,
         {
           method: 'PATCH',
           credentials: 'include',
