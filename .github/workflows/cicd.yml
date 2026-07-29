@@ -69,3 +69,30 @@ jobs:
       - name: Push frontend image
         run: |
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/vidsphere-frontend:${{ github.sha }}
+
+      
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Update Backend Image Tag
+        run: |
+          sed -i "s|image: ${{ secrets.DOCKERHUB_USERNAME }}/vidsphere-backend:.*|image: ${{ secrets.DOCKERHUB_USERNAME }}/vidsphere-backend:${{ github.sha }}|g" \
+          argocd/k8s/backend-deployment.yaml
+
+      - name: Update Frontend Image Tag
+        run: |
+          sed -i "s|image: ${{ secrets.DOCKERHUB_USERNAME }}/vidsphere-frontend:.*|image: ${{ secrets.DOCKERHUB_USERNAME }}/vidsphere-frontend:${{ github.sha }}|g" \
+          argocd/k8s/frontend-deployment.yaml
+
+      - name: Commit Manifest Changes
+        run: |
+          git add argocd/k8s/backend-deployment.yaml
+          git add argocd/k8s/frontend-deployment.yaml
+
+          git diff --cached --quiet || git commit -m "Update images to ${{ github.sha }}"
+
+      - name: Push Manifest Changes
+        run: |
+          git push origin HEAD:${{ github.ref_name }}
