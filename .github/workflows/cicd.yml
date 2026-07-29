@@ -5,6 +5,8 @@ on:
    branches:
      - main
      - development
+permissions:
+  contents: write
 
 jobs:
   cicd:
