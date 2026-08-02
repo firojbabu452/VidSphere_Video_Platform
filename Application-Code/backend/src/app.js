@@ -9,25 +9,19 @@ import dotenv from "dotenv";
 const app = express();
 dotenv.config();
 
-const allowedOrigins = [
-  process.env.CORS_ORIGIN,
-  "http://localhost:3000",
-  "http://127.0.0.1:3000",
-];
+app.use((req, res, next) => {
+  console.log("CORS request origin:", req.headers.origin, "method:", req.method, "path:", req.path);
+  next();
+});
 
 app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
+  origin: process.env.NODE_ENV === "production"
+    ? process.env.CORS_ORIGIN
+    : true,
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
   credentials: true,
 }));
-app.options("*", cors());
 app.use(cookieParser());
 
 app.use(express.json({
