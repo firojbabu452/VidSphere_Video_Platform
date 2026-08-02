@@ -22,7 +22,7 @@ spec:
       containers:
         - name: frontend
 
-          image: firojbabu452/vidsphere-frontend:6088d8361c61a82048a947e3e2f4512d2bef6f59
+          image: firojbabu452/vidsphere-frontend:fb0787922512ca69e2cde3cbba144f614b6fc35b
           imagePullPolicy: Always
 
           ports:
