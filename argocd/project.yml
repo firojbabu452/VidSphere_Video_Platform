@@ -2,21 +2,52 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: vidsphere
-  namespace: argocd                   
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io  # Ensures cascading deletion of resources
+  namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: backend=firojbabu452/vidsphere-backend,frontend=firojbabu452/vidsphere-frontend
+    argocd-image-updater.argoproj.io/update-strategy: latest
 spec:
-  project: default                        # The Argo CD project this app belongs to
+  project: default
   source:
-    repoURL: 'https://github.com/firojbabu452/VidSphere_Video_Platform.git' # Your Git repository
-    targetRevision: development              
-    path: argocd/k8s                      # Points directly to argocd/k8s inside the repo
+    repoURL: 'https://github.com/firojbabu452/VidSphere_Video_Platform.git'
+    targetRevision: development
+    path: argocd/k8s
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: vidsphere          
+    namespace: vidsphere
   syncPolicy:
-    automated:                            
-      prune: true                        
-      selfHeal: true                  
+    automated:
+      prune: true
+      selfHeal: true
     syncOptions:
-      - CreateNamespace=true 
+      - CreateNamespace=true
+
+
+
+
+
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: vidsphere
+#   namespace: argocd                   
+#   finalizers:
+#     - resources-finalizer.argocd.argoproj.io  # Ensures cascading deletion of resources
+# spec:
+#   project: default                        # The Argo CD project this app belongs to
+#   source:
+#     repoURL: 'https://github.com/firojbabu452/VidSphere_Video_Platform.git' # Your Git repository
+#     targetRevision: development              
+#     path: argocd/k8s                      # Points directly to argocd/k8s inside the repo
+#   destination:
+#     server: 'https://kubernetes.default.svc'
+#     namespace: vidsphere          
+#   syncPolicy:
+#     automated:                            
+#       prune: true                        
+#       selfHeal: true                  
+#     syncOptions:
+#       - CreateNamespace=true 
+
+
+
