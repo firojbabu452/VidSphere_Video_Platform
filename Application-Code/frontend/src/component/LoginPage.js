@@ -72,7 +72,7 @@ const LoginPage = () => {
         const userId = result.data.user._id;
          
         Cookies.set("userId", userId, {
-        expires: 10, 
+          expires: 10, 
           });
 
         Cookies.set("accessToken", accessToken, {
