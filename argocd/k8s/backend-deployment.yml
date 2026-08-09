@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: firojbabu452/vidsphere-backend:bd85f6a3dbf5b31648e26ef2221a6b4de02459eb
+          image: firojbabu452/vidsphere-backend:60149164ae73373e57b8cfefee9d4601cd09843a
 
           imagePullPolicy: Always
 
