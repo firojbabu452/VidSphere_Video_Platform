@@ -6,7 +6,7 @@ metadata:
   labels:
     app: vidsphere-backend
 spec:
-  replicas: 3
+  replicas: 2
 
   selector:
     matchLabels:
@@ -33,6 +33,9 @@ spec:
 
             - name: NODE_ENV
               value: "production"
+              
+            - name: CORS_ORIGIN
+              value: "http://localhost:3000"
 
             - name: MONGODB_URI
               valueFrom:

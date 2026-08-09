@@ -1,0 +1,40 @@
+namespace: vidsphere
+
+backend:
+  name: vidsphere-backend
+  replicas: 2
+  port: 5000
+  nodeEnv: production
+  corsOrigin: "https://app.vidsphere.com"
+  image:
+    repository: firojbabu452/vidsphere-backend
+    tag: "d088e8ce663c8fd53f1017084e6e03a083a98de5"
+    pullPolicy: Always
+  secretName: backend-secret
+  secret:
+    create: true
+    mongoUri: "mongodb+srv://Abhijit972003:Abhijit972003@cluster0.h4g1dt2.mongodb.net/node_backend_viodeotube?retryWrites=true&w=majority"
+    jwtSecret: "abhijitmaitykolaghatbrainwareuniversity"
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi
+
+frontend:
+  name: vidsphere-frontend
+  replicas: 2
+  port: 3000
+  image:
+    repository: firojbabu452/vidsphere-frontend
+    tag: "d088e8ce663c8fd53f1017084e6e03a083a98de5"
+    pullPolicy: Always
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 300m
+      memory: 256Mi
